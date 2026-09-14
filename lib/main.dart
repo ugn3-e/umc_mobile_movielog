@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // SVG 로고 사용을 위한 패키지 임포트
 import 'profile_screen.dart';
+import 'theme/app_theme.dart';
 
 void main() {
   runApp(const MovieLogApp());
@@ -13,9 +15,7 @@ class MovieLogApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MovieLog',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light, // AppTheme에서 정의한 light 테마로 지정
       //home: const StartScreen(), // 첫 실행 화면을 StartScreen으로 지정
       home: const ProfileScreen(), // 첫 실행 화면을 ProfileScreen으로 지정
     );
@@ -33,11 +33,17 @@ class StartScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center, // 세로 기준 가운데 정렬
             children: [
-              const Icon(
-                Icons.movie_outlined,
-                size: 72,
-                color: Colors.deepPurple,
-                semanticLabel: '영화 로고 아이콘',
+              // const Icon(
+              //   Icons.movie_outlined,
+              //   size: 72,
+              //   color: Colors.deepPurple,
+              //   semanticLabel: '영화 로고 아이콘',
+              // ),
+              SvgPicture.asset( // Icons.movie_outlined 제거
+                'assets/logos/movielog_logo.svg',
+                width: 72,
+                height: 72,
+                semanticsLabel: 'MovieLog 로고',
               ),
               const SizedBox(height: 24), // 위젯 사이 여백
               const Text(
