@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
 
 void main() {
   runApp(const MovieLogApp());
@@ -15,7 +16,8 @@ class MovieLogApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const StartScreen(), // 첫 실행 화면을 StartScreen으로 지정
+      //home: const StartScreen(), // 첫 실행 화면을 StartScreen으로 지정
+      home: const ProfileScreen(), // 첫 실행 화면을 ProfileScreen으로 지정
     );
   }
 }
