@@ -58,10 +58,12 @@ class ProfileScreen extends StatelessWidget {
 
               // 프로필 수정 버튼
               Center(
-                child: OutlinedButton(
+                child: ElevatedButton( // 버튼 수정
                   onPressed: () {}, // 클릭 기능은 비워둠
-                  style: OutlinedButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
                     foregroundColor: AppColors.violet,
+                    backgroundColor: AppColors.warmWhite,
+                    elevation: 0,
                     side: const BorderSide(color: AppColors.violet),
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                     shape: RoundedRectangleBorder(
