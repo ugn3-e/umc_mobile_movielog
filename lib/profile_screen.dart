@@ -58,10 +58,12 @@ class ProfileScreen extends StatelessWidget {
 
               // 프로필 수정 버튼
               Center(
-                child: OutlinedButton(
+                child: ElevatedButton( // 버튼 수정
                   onPressed: () {}, // 클릭 기능은 비워둠
-                  style: OutlinedButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
                     foregroundColor: AppColors.violet,
+                    backgroundColor: AppColors.warmWhite,
+                    elevation: 0,
                     side: const BorderSide(color: AppColors.violet),
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                     shape: RoundedRectangleBorder(
@@ -102,9 +104,17 @@ class ProfileScreen extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Chip(
-                      label: Text(genre, style: AppTextStyles.bodySmall),
-                      backgroundColor: Theme.of(context).colorScheme.surface,
-                      side: BorderSide(color: Theme.of(context).colorScheme.primary),
+                      //label: Text(genre, style: AppTextStyles.bodySmall),
+                      label: Text(
+                      genre, 
+                      style: AppTextStyles.bodySmall.copyWith(
+                        //color: Theme.of(context).colorScheme.primary, // 보라색으로 텍스트 색상 변경
+                        color: AppColors.violet,
+                      ),
+                    ),
+                      backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.2), // 배경색을 연한 보라색으로 변경
+                      //backgroundColor: Theme.of(context).colorScheme.surface,
+                      side: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.3)), // 테두리 색상을 연한 보라색으로 변경
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
